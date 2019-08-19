@@ -1,0 +1,1 @@
+../../deps/onedrive-sdk-python/src/onedrivesdk/collection_base.py

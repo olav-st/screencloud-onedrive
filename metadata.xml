@@ -1,0 +1,7 @@
+<metadata>
+	<name>OneDrive</name>
+	<shortname>onedrive</shortname>
+	<className>OneDriveUploader</className>
+	<icon>icon.png</icon>
+	<version>1.0</version>
+</metadata>
