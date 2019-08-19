@@ -1,0 +1,18 @@
+language: generic
+os:
+- linux
+script:
+- make
+after_success:
+- mv current.zip $TRAVIS_TAG.zip
+
+deploy:
+  provider: releases
+  api_key:
+    secure: akUBQ1MKtTGvxtSlXlY+7VKXrn5ySq3jXAwyFOYqceArpWR8wgO6SRJ457+Z5oSZGd16GeRF+Dqtb7VGxB9WhR6BMW5RfxoJdWi5kXwkNfhUP7hKVlrCuWzg+LmQJlwRgVyxeOJPBw3Ov5/gpwmze/A9zH1XB3dYodVKNRzz85EkgEwup/FPU/wmTecYo8Km3tOFUa7KESUsQsK5tPKaSfwTJMmZCwLHYOMRpUTJL6hoq/vDPWbZGnd+pnt4NQghqLnuWVmlkfeotLT0w1zrljvq2UVru241tUIW3+Rl1YD9fajuYNvLaFVIq9v/iAjjmtxCnl0g/QYDlVNirp2+1jWuZSomIhWpeU6Op8SRcdTwZ70FD8pKtVaIRqI5vuvCW6Z9HVZVRar0QzR5MvBjuikNf4HDWtXbX1XSAKQdrUFAjI/JsrcZorP+3O88+x3y9uqw2y9aIkddEfH/ThNaNuyoP27got6IikxpR+OmoQj1iLTcnrSjowK/uw6zvoO4+ndaq/efAm+fexJ49Hm2ehau2ReGn5KIdaf+3ehVE8p5M3tJSfjAApwaA1v60HGSTJlE5ZCs9fIVNFKD2LySDLJ64FkMdkV8Z5tpzfEHf5rgjBVYP/ezD7hhvVMWOvaDNQzrrXknHtETgSrbHBil4ujPcAWBee5YEhV27343p98=
+  file_glob: true
+  file: ./*.zip
+  skip_cleanup: true
+  on:
+    repo: olav-st/screencloud-onedrive
+    tags: true
